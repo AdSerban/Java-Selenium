@@ -1,11 +1,13 @@
 package Selenium;
 
+import WebPage.BrowserStack;
 import WebPage.CalculatorPage;
 import WebPage.OrangeHRM;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import utils.BrowserHelper;
 
@@ -20,13 +22,16 @@ public class TestSelenium {
      private WebDriver driver;
      private OrangeHRM orangeHRM;
      private CalculatorPage calculatorPage;
+     private BrowserStack browserStack;
 
 
-     @BeforeAll
+
+    @BeforeAll
      void befforeAll(){
          driver = browserHelper.getChromeDriver();
          orangeHRM = initElements(driver,OrangeHRM.class);
          calculatorPage = initElements(driver, CalculatorPage.class);
+         browserStack = initElements(driver,BrowserStack.class);
      }
 
      @AfterAll
@@ -63,7 +68,31 @@ public class TestSelenium {
         orangeHRM.username.sendKeys("Admin");
         orangeHRM.pass.sendKeys("admin123");
         orangeHRM.loginBtn.click();
+//        orangeHRM.nextPage.click();
         Thread.sleep(5000);
+
+    }
+
+    @Test
+    public void alertsTest() throws InterruptedException {
+        driver.get("https://www.browserstack.com/users/sign_up");
+
+        browserStack.userName.sendKeys("ceva");
+        browserStack.email.sendKeys("ceva@yahoo.com");
+        browserStack.passWord.sendKeys("cevaaa");
+        browserStack.termsAcc.click();
+        System.out.println(browserStack.termsAcc.isEnabled());
+        System.out.println(browserStack.termsAcc.isSelected());
+        browserStack.termsAcc.click();
+        System.out.println(browserStack.termsAcc.isSelected());
+        browserStack.subBtn.click();
+
+        Alert alert = driver.switchTo().alert();
+        Thread.sleep(2000);
+        System.out.println(alert.getText());
+        Thread.sleep(2000);
+        alert.accept();
+
 
 
     }

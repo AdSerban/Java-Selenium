@@ -11,8 +11,11 @@ public class OrangeHRM {
     @FindBy(css ="[name= 'username']") public WebElement username;
     @FindBy(css ="[name= 'password']") public WebElement pass;
     @FindBy(css ="[type= 'submit']") public WebElement loginBtn;
+
     @FindBy(css ="[class*= 'orangehrm-login-forgot-header']") public WebElement forgotPass;
     @FindBy(css ="[class*= 'orangehrm-login-title']") public WebElement title;
+
+    @FindBy(css = "li:nth-child(3)") public WebElement nextPage;
 
 
 }
