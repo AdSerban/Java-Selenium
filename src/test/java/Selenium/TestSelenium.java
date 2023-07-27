@@ -184,6 +184,7 @@ public class TestSelenium {
         assertTrue(verifyTitle);
         assertFalse(expectedTitleForNotEquals_2);
         assertFalse(expectedTitleForNotEquals_2);
+        assertFalse(expectedTitleForNotEquals_2);
 
     }
 }
