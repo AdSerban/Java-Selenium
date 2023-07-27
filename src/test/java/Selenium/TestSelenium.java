@@ -167,4 +167,22 @@ public class TestSelenium {
         }
     }
 
+    @Test
+    public void assertionTest() {
+        driver.get("https://www.browserstack.com/");
+        String actualTitle = driver.getTitle();
+        System.out.println(actualTitle);
+        String expectedTitle = "Most Reliable App & Cross Browser Testing Platform | BrowserStack";
+        Assert.assertEquals(actualTitle,expectedTitle);
+
+        String expectedTitleForNotEquals = "Most Reliable App & Cross Browser Testing Platform | BrowserStack + added";
+        Assert.assertNotEquals(actualTitle,expectedTitleForNotEquals);
+
+        Boolean verifyTitle = driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform | BrowserStack");
+        Boolean expectedTitleForNotEquals_2 =  driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform | BrowserStack + added");
+
+        assertTrue(verifyTitle);
+        assertFalse(expectedTitleForNotEquals_2);
+
+    }
 }
