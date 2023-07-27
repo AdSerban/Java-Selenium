@@ -15,7 +15,7 @@ public class OrangeHRM {
     @FindBy(css ="[class*= 'orangehrm-login-forgot-header']") public WebElement forgotPass;
     @FindBy(css ="[class*= 'orangehrm-login-title']") public WebElement title;
 
-    @FindBy(css = "li:nth-child(3)") public WebElement nextPage;
+    @FindBy(css = "nav[aria-label='Sidepanel'] li:nth-child(3)") public WebElement nextPage;
 
 
 }
