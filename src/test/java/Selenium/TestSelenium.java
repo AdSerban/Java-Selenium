@@ -10,14 +10,14 @@ import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import utils.BrowserHelper;
 
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.openqa.selenium.support.PageFactory.initElements;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -183,8 +183,27 @@ public class TestSelenium {
 
         assertTrue(verifyTitle);
         assertFalse(expectedTitleForNotEquals_2);
-        assertFalse(expectedTitleForNotEquals_2);
-        assertFalse(expectedTitleForNotEquals_2);
+    }
+    @Test
+    public void assertionTest_2() {
+        driver.get("https://www.browserstack.com/");
 
+        String verifyAssertNull = null;
+        assertNull(verifyAssertNull);
+
+        Boolean verifyTitle = driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform");
+        assertNotNull(verifyTitle);
+
+        SoftAssert softAssert = new SoftAssert();
+        driver.navigate().to("https://www.browserstack.com/");
+        String getActualTitle = driver.getTitle();
+        Boolean verifyTitleForSoftAssert = driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform | BrowserStack");
+        softAssert.assertEquals(getActualTitle, "Most Reliable App & Cross Browser Testing Platform | BrowserStack");
+        softAssert.assertNotEquals(getActualTitle, "Most Reliable App & Cross Browser Testing Platform | BrowserStack + added");
+        softAssert.assertNull(verifyTitleForSoftAssert);
+        softAssert.assertNotNull(verifyTitleForSoftAssert);
+        softAssert.assertTrue("BrowserStack".equals("Browserstack"), "First soft assert failed");
+        softAssert.assertFalse("BrowserStack".equals("BrowserStack"), "Second soft assert failed");
+        softAssert.assertAll();
     }
 }
