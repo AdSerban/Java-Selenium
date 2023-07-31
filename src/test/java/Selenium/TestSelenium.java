@@ -1,21 +1,25 @@
 package Selenium;
 
-import WebPage.BrowserStack;
-import WebPage.CalculatorPage;
-import WebPage.OrangeHRM;
+import WebPage.*;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import utils.BrowserHelper;
 
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.openqa.selenium.support.PageFactory.initElements;
@@ -28,6 +32,9 @@ public class TestSelenium {
      private OrangeHRM orangeHRM;
      private CalculatorPage calculatorPage;
      private BrowserStack browserStack;
+    private GooglePage googlePage;
+    private GmailPage gmailPage;
+    private InternetHeroKuappPage internetHeroKuppaPage;
 
 
 
@@ -37,6 +44,9 @@ public class TestSelenium {
          orangeHRM = initElements(driver,OrangeHRM.class);
          calculatorPage = initElements(driver, CalculatorPage.class);
          browserStack = initElements(driver,BrowserStack.class);
+         googlePage = initElements(driver, GooglePage.class);
+         gmailPage = initElements(driver, GmailPage.class);
+         internetHeroKuppaPage = initElements(driver, InternetHeroKuappPage.class);
      }
 
      @AfterAll
@@ -132,9 +142,9 @@ public class TestSelenium {
         driver.findElement(By.cssSelector("li[id*='45112']")).click();
         js.executeScript("window.scrollBy(0,40)");
 
-        WebElement link = driver.findElement(By.xpath("//a[@id='product-menu-toggle']//span[@class='account-down-caret']//*[local-name()='svg']"));
+//        WebElement link = driver.findElement(By.xpath("//a[@id='product-menu-toggle']//span[@class='account-down-caret']//*[local-name()='svg']"));
         Actions newwin = new Actions(driver);
-        newwin.keyDown(Keys.SHIFT).click(link).keyUp(Keys.SHIFT).build().perform();
+//        newwin.keyDown(Keys.SHIFT).click(link).keyUp(Keys.SHIFT).build().perform();
 //Thread.sleep(2000);
 //js.executeScript("window.scrollBy(0,400)");
         Thread.sleep(3000);
@@ -206,4 +216,57 @@ public class TestSelenium {
         softAssert.assertFalse("BrowserStack".equals("BrowserStack"), "Second soft assert failed");
         softAssert.assertAll();
     }
+
+    @Test
+    public void waitImplicit() throws InterruptedException {
+        driver.get("https://www.google.com/");
+
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        googlePage.acceptAll.click();
+        googlePage.putText.sendKeys("Selenium WebDriver Interview questions");
+        googlePage.putText.sendKeys(Keys.ENTER);
+        System.out.println(googlePage.elements.size());
+    }
+    protected int timeout = 300;
+    @Test
+    public void waitExplicit () throws InterruptedException {
+        driver.get("https://practicetestautomation.com/practice-test-login/");
+
+
+        gmailPage.methodA();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[id='menu-item-20']")));
+        driver.findElement(By.cssSelector("[id='menu-item-20']")).click();
+        Thread.sleep(5000);
+    }
+
+    @Test
+    public void fluentWait() throws InterruptedException {
+
+        driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
+
+        Thread.sleep(2000);
+        internetHeroKuppaPage.startBtn.click();
+
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofSeconds(10L))
+                .pollingEvery(Duration.ofSeconds(2L))
+                .ignoring(NoSuchElementException.class);
+
+        WebElement foo= wait.until(new Function<WebDriver, WebElement>() {
+
+            public WebElement apply(WebDriver driver) {
+
+                if(driver.findElement(By.cssSelector("[id='finish'] h4")).isDisplayed()) {
+
+                    return driver.findElement(By.cssSelector("[id='finish'] h4"));
+                } else
+                    return null;
+            }
+        });
+        System.out.println(driver.findElement(By.cssSelector("[id='finish'] h4")).isDisplayed());
+
+
+    }
+
 }
