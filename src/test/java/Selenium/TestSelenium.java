@@ -1,21 +1,25 @@
 package Selenium;
 
-import WebPage.BrowserStack;
-import WebPage.CalculatorPage;
-import WebPage.OrangeHRM;
+import WebPage.*;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import utils.BrowserHelper;
 
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.openqa.selenium.support.PageFactory.initElements;
@@ -28,15 +32,20 @@ public class TestSelenium {
      private OrangeHRM orangeHRM;
      private CalculatorPage calculatorPage;
      private BrowserStack browserStack;
-
+     private GooglePage googlePage;
+     private GmailPage gmailPage;
+     private InternetHeroKuappPage internetHeroKuppaPage;
 
 
     @BeforeAll
-     void befforeAll(){
+    public void befforeAll(){
          driver = browserHelper.getChromeDriver();
          orangeHRM = initElements(driver,OrangeHRM.class);
          calculatorPage = initElements(driver, CalculatorPage.class);
          browserStack = initElements(driver,BrowserStack.class);
+         googlePage = initElements(driver, GooglePage.class);
+         gmailPage = initElements(driver, GmailPage.class);
+         internetHeroKuppaPage = initElements(driver, InternetHeroKuappPage.class);
      }
 
      @AfterAll
@@ -132,9 +141,9 @@ public class TestSelenium {
         driver.findElement(By.cssSelector("li[id*='45112']")).click();
         js.executeScript("window.scrollBy(0,40)");
 
-        WebElement link = driver.findElement(By.xpath("//a[@id='product-menu-toggle']//span[@class='account-down-caret']//*[local-name()='svg']"));
+//        WebElement link = driver.findElement(By.xpath("//a[@id='product-menu-toggle']//span[@class='account-down-caret']//*[local-name()='svg']"));
         Actions newwin = new Actions(driver);
-        newwin.keyDown(Keys.SHIFT).click(link).keyUp(Keys.SHIFT).build().perform();
+//        newwin.keyDown(Keys.SHIFT).click(link).keyUp(Keys.SHIFT).build().perform();
 //Thread.sleep(2000);
 //js.executeScript("window.scrollBy(0,400)");
         Thread.sleep(3000);
