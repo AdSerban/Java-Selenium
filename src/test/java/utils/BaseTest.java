@@ -1,20 +1,14 @@
 package utils;
 
-import WebPage.*;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
-import org.openqa.selenium.WebDriver;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.util.Properties;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class BaseTests {
+public class BaseTest {
 
 
     @BeforeAll

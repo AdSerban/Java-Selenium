@@ -1,4 +1,4 @@
-package WebPage;
+package UI.WebPage;
 
 public class ShoppingPage {
 

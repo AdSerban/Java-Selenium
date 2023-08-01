@@ -1,15 +1,9 @@
-package WebPage;
+package UI.WebPage;
 
-import org.openqa.selenium.By;
+import UI.BasePage;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.BasePage;
-
-import java.time.Duration;
 
 public class GmailPage extends BasePage {
 

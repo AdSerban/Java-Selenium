@@ -1,12 +1,11 @@
 package Selenium;
 
-import WebPage.CalculatorPage;
+import UI.WebPage.CalculatorPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import utils.BasePage;
-import utils.BaseTests;
+import utils.BaseTest;
 
-public class DummyTest extends BaseTests {
+public class DummyTest extends BaseTest {
 
 
     CalculatorPage calculatorPage;
@@ -16,10 +15,12 @@ public class DummyTest extends BaseTests {
     }
 
     @Test
-    @DisplayName("First Test")
-    public void dummyTest() {
-        calculatorPage.goToStartPage();
-        //calculatorPage.methods();
+    @DisplayName("Calculator Page Test")
+    public void calculatorTest() throws InterruptedException {
+        calculatorPage.goToCalculatorPage();
+        calculatorPage.calculateSimpleTest();
+
+        //polimorfism
 
     }
 }

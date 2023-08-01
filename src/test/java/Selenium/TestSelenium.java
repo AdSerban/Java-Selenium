@@ -1,6 +1,6 @@
 package Selenium;
 
-import WebPage.*;
+import UI.WebPage.*;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -60,7 +60,7 @@ public class TestSelenium {
          driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
          driver.get("http://www.calculator.net/");
          Thread.sleep(5000);
-         calculatorPage.mathBtn.click();
+         //calculatorPage.mathBtn.click();
          calculatorPage.perBtn.click();
          calculatorPage.firstValue.sendKeys("40");
          calculatorPage.secondValue.sendKeys("5");
