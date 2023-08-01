@@ -245,7 +245,7 @@ public class TestSelenium {
 
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
 
-        Thread.sleep(2000);
+        Thread.sleep(2000);//wait implicit
         internetHeroKuppaPage.startBtn.click();
 
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
