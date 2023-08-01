@@ -40,7 +40,7 @@ public class TestSelenium {
 
     @BeforeAll
     public void befforeAll(){
-         driver = browserHelper.getChromeDriver();
+         //driver = browserHelper.getChromeDriver();
          orangeHRM = initElements(driver,OrangeHRM.class);
          calculatorPage = initElements(driver, CalculatorPage.class);
          browserStack = initElements(driver,BrowserStack.class);

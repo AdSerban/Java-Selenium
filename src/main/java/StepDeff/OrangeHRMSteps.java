@@ -8,12 +8,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import utils.BaseTests;
+
 import utils.BrowserHelper;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 
-public class OrangeHRMSteps extends BaseTests{
+public class OrangeHRMSteps {
 
     private BrowserHelper browserHelper = new BrowserHelper();
     //private WebDriver driver;

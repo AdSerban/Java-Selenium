@@ -3,6 +3,7 @@ package utils;
 import WebPage.*;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
+import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.WebDriver;
 
 import java.io.File;
@@ -11,26 +12,24 @@ import java.util.Properties;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTests {
 
 
-    private static BrowserHelper browserHelper = new BrowserHelper();
-    public static WebDriver driver;
-    private OrangeHRM orangeHRM;
-    private CalculatorPage calculatorPage;
-    private BrowserStack browserStack;
-
-
-
     @BeforeAll
-    public void befforeAll() {
-        driver = browserHelper.getChromeDriver();
-        orangeHRM = initElements(driver,OrangeHRM.class);
-        calculatorPage = initElements(driver, CalculatorPage.class);
-        browserStack = initElements(driver,BrowserStack.class);
-
+    public void startDriver()
+    {
 
     }
+
+    @AfterAll
+    public void quitDriver()
+    {
+
+    }
+
+
 
 //    @BeforeClass
 //    public static void initialiseDriverAndProperties() {
@@ -57,11 +56,6 @@ public class BaseTests {
 //        }
 //    }
 
-    @AfterAll
-    void afterAll() {
-        driver.quit();
-
-    }
 
 //    private static void loadTestProperties(){
 //        Properties properties = System.getProperties();

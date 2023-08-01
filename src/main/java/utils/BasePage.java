@@ -16,6 +16,18 @@ public class BasePage{
 
     protected int timeout = 300;
     protected WebDriver driver;
+    BrowserHelper browserHelper = new BrowserHelper();
+    String originalWindow;
+
+
+    public BasePage() {
+        this.driver = browserHelper.getDriver();
+        this.originalWindow = driver.getWindowHandle();
+    }
+    public void goTo(String link) {
+
+        driver.get(link);
+    }
 
     public WebElement findElementByCssSelector(String CSS_Selector){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));

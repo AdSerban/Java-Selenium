@@ -10,12 +10,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import utils.BaseTests;
+
 import utils.BrowserHelper;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 
-public class PlaceOrderSteps extends BaseTests {
+public class PlaceOrderSteps {
 
     private BrowserHelper browserHelper = new BrowserHelper();
     private WebDriver driver;
