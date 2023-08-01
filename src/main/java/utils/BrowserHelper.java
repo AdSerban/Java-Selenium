@@ -19,5 +19,7 @@ public class BrowserHelper {
         chromeDriver.manage().window().maximize();
 
         return chromeDriver;
+
+        // in basepage initializez driverul
     }
 }
