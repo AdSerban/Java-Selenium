@@ -1,5 +1,10 @@
 package StepDeff;
 
+import WebPage.BrowserStack;
+import WebPage.CalculatorPage;
+import WebPage.OrangeHRM;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,7 +20,7 @@ public class PlaceOrderSteps extends BaseTests {
     private BrowserHelper browserHelper = new BrowserHelper();
     private WebDriver driver;
 
-    @Given("Customer navigates to the website")
+        @Given("Customer navigates to the website")
     public void navigateToWebsite(){
 
         driver.get("http://www.shopping.com/");
