@@ -19,9 +19,7 @@ public class BaseTests {
     private OrangeHRM orangeHRM;
     private CalculatorPage calculatorPage;
     private BrowserStack browserStack;
-    private GooglePage googlePage;
-    private GmailPage gmailPage;
-    private InternetHeroKuappPage internetHeroKuppaPage;
+
 
 
     @BeforeAll
@@ -30,9 +28,7 @@ public class BaseTests {
         orangeHRM = initElements(driver,OrangeHRM.class);
         calculatorPage = initElements(driver, CalculatorPage.class);
         browserStack = initElements(driver,BrowserStack.class);
-        googlePage = initElements(driver, GooglePage.class);
-        gmailPage = initElements(driver, GmailPage.class);
-        internetHeroKuppaPage = initElements(driver, InternetHeroKuappPage.class);
+
 
     }
 
