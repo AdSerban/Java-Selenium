@@ -39,7 +39,7 @@ public class TestSelenium {
 
 
     @BeforeAll
-     void befforeAll(){
+    public void befforeAll(){
          driver = browserHelper.getChromeDriver();
          orangeHRM = initElements(driver,OrangeHRM.class);
          calculatorPage = initElements(driver, CalculatorPage.class);
@@ -207,11 +207,11 @@ public class TestSelenium {
         SoftAssert softAssert = new SoftAssert();
         driver.navigate().to("https://www.browserstack.com/");
         String getActualTitle = driver.getTitle();
-        Boolean verifyTitleForSoftAssert = driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform | BrowserStack");
+        Boolean VERIFIEDTITLE = driver.getTitle().equalsIgnoreCase("Most Reliable App & Cross Browser Testing Platform | BrowserStack");
         softAssert.assertEquals(getActualTitle, "Most Reliable App & Cross Browser Testing Platform | BrowserStack");
         softAssert.assertNotEquals(getActualTitle, "Most Reliable App & Cross Browser Testing Platform | BrowserStack + added");
-        softAssert.assertNull(verifyTitleForSoftAssert);
-        softAssert.assertNotNull(verifyTitleForSoftAssert);
+        softAssert.assertNull(VERIFIEDTITLE);
+        softAssert.assertNotNull(VERIFIEDTITLE);
         softAssert.assertTrue("BrowserStack".equals("Browserstack"), "First soft assert failed");
         softAssert.assertFalse("BrowserStack".equals("BrowserStack"), "Second soft assert failed");
         softAssert.assertAll();
