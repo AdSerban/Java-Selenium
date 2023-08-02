@@ -43,10 +43,30 @@ public class OrangeHRM extends BasePage {
 
     }
 
+    public void clickLogin() {
+        click(LOGIN_BTN);
+    }
+
     public void switchPage() throws InterruptedException {
         Thread.sleep(500);
         click(NEXT_PAGE);
 
     }
+    public void getTitleOfPage() {
+        findElementByCssSelector(TITTLE).getText();
+    }
 
+
+    public void setUsername(String strUserName) {
+        findElementByCssSelector(USER_NAME).sendKeys(strUserName);
+    }
+
+    public void setPassword(String strPassword) {
+        findElementByCssSelector(PASSWORD).sendKeys(strPassword);
+    }
+
+    public void putUserAndPass(String strUserName, String strPassword) {
+        this.setUsername(strUserName);
+        this.setPassword(strPassword);
+    }
 }

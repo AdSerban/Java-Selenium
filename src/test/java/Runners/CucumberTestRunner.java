@@ -8,7 +8,7 @@ import io.cucumber.junit.Cucumber;
 @CucumberOptions(
         plugin = {"pretty"},
         glue = {"StepDeff"},
-        features = {"src/test/java/Features"})
+        features = {"src/test/java/Features/OrangeHRM.feature"})
 
 public class CucumberTestRunner {
 }
