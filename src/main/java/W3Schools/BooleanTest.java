@@ -1,6 +1,6 @@
 package W3Schools;
 
-public class Boolean {
+public class BooleanTest {
 
     //You can go ahead only if the following expression evaluates to 'true' :
 
@@ -26,5 +26,5 @@ public class Boolean {
             System.out.println("false");
     }
 
-
+//    https://demo.guru99.com/
 }

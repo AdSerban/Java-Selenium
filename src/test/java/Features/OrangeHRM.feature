@@ -1,13 +1,10 @@
-#Feature: OrangeHRM page
-#
-#  @Regression @Smoke
-#
-##  Background:
-##    Given I set up the driver
-#
-#  Scenario: Login on OrangeHRM
-#
-#    Given I navigate to OrangeHRM
-#    And I enter the username as "Admin" and password as "admin123"
-#    And I click on Login button
-#    Then I verified the WebPageName
+Feature: Login Action
+
+  Scenario: Successful Login with Valid Credentials
+    Given User Navigate to LogIn Page
+    When User enters "Admin" and "admin123"
+    Then Message displayed Login Successfully
+
+  Scenario: Successful LogOut
+    When User LogOut from the Application
+    Then Message displayed LogOut Successfully

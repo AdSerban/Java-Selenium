@@ -1,7 +1,6 @@
 package UI.WebPage;
 
 import UI.BasePage;
-import io.cucumber.java.it.Ma;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +24,7 @@ public class CalculatorPage extends BasePage {
     public final By SECOND_VALUE = By.cssSelector( "[id=cpar2]");
     public final By CLT_BTN = By.cssSelector("[value = 'Calculate']");
     public final By RESULT = By.cssSelector("div [id='content'] [class='h2result']");
+    public final By LOGO = By.cssSelector("[id='logo']");
 
 
 
@@ -50,4 +50,10 @@ public class CalculatorPage extends BasePage {
         findElementByCssSelector(CLT_BTN).click();
         System.out.println(getElement(RESULT).getText());
     }
+
+    public boolean getTitle() {
+        findElementByCssSelector(LOGO).getText();
+        return true;
+    }
+
 }

@@ -1,32 +1,54 @@
 package StepDeff;
 
 
+import UI.BasePage;
+import UI.WebPage.OrangeHRM;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
-public class OrangeHRMSteps {
+public class OrangeHRMSteps extends BasePage {
 
-    @Given("I navigate to OrangeHRM")
-    public void iNavigateToOrangeHRM() {
+    OrangeHRM orangeHRM;
+
+    public OrangeHRMSteps() {
+        this.orangeHRM = new OrangeHRM();
+    }
+
+    @Given("User Navigate to LogIn Page")
+    public void userNavigateToLogInPage() {
+
+        orangeHRM.goToOrangePage();
 
     }
 
-    @And("I enter the username as {string} and password as {string}")
-    public void iEnterTheUsernameAsAndPasswordAs(String arg0, String arg1) {
+    @When("User enters {string} and {string}")
+    public void userEntersAnd(String arg0, String arg1) throws InterruptedException {
 
-        //System.out.println("username is: " + arg0 + "pass is " + arg1);
+        orangeHRM.putUserAndPass(arg0,arg1);
+//        fill(findElementByCssSelector(orangeHRM.USER_NAME),arg0);
+//        fill(findElementByCssSelector(orangeHRM.PASSWORD),arg1);
+        Thread.sleep(5000);
+        orangeHRM.clickLogin();
     }
 
-    @And("I click on Login button")
-    public void iClickOnLoginButton() {
+    @Then("Message displayed Login Successfully")
+    public void messageDisplayedLoginSuccessfully() {
+
+        orangeHRM.getTitleOfPage();
     }
 
-    @Then("I verified the WebPageName")
-    public void iVerifiedTheWebPageName() {
-
-        String expectedTitle = "Most Reliable App & Cross Browser Testing Platform | BrowserStack";
-
+    @When("User LogOut from the Application")
+    public void userLogOutFromTheApplication() {
+        System.out.println("Ceva");
     }
+
+    @Then("Message displayed LogOut Successfully")
+    public void messageDisplayedLogOutSuccessfully() {
+
+        System.out.println("CEVA");
+    }
+
 
 }

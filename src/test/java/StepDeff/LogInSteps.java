@@ -17,8 +17,8 @@ public class LogInSteps extends BasePage {
     public LogInSteps() {
         this.orangeHRM = new OrangeHRM();
     }
-    @Given("Open the Firefox and launch the application")
-    public void openTheFirefoxAndLaunchTheApplication() throws Throwable {
+    @Given("Open the Chrome and launch the application")
+    public void openTheChromeAndLaunchTheApplication() throws Throwable {
 
         orangeHRM.goToOrangePage();
     }
