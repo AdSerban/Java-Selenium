@@ -20,17 +20,13 @@ public class OrangeHRM extends BasePage {
 
 
     public final By USER_NAME = By.cssSelector("[name= 'username']");
-
     public final By PASSWORD = By.cssSelector("[name= 'password']");
-
     public final By LOGIN_BTN = By.cssSelector("[type= 'submit']");
 
     public final By FORGOT_PASS = By.cssSelector("[class*= 'orangehrm-login-forgot-header']");
-
     public final By TITTLE = By.cssSelector("[class*= 'orangehrm-login-title']");
-
     public final By NEXT_PAGE = By.cssSelector("nav[aria-label='Sidepanel'] li:nth-child(3)");
-
+    public final By ALERT = By.cssSelector("[role='alert']");
 
     public void goToOrangePage() {
         goTo("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
@@ -68,5 +64,9 @@ public class OrangeHRM extends BasePage {
     public void putUserAndPass(String strUserName, String strPassword) {
         this.setUsername(strUserName);
         this.setPassword(strPassword);
+    }
+
+    public String getAlert() {
+        return findElementByCssSelector(ALERT).getText();
     }
 }
