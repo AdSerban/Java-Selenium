@@ -34,10 +34,7 @@ public class ValidLogInOrangeHRMSteps extends BasePage {
     @Then("I verify that I am logged into my account by checking that the username is displayed in the navigation bar in the right corner of the application by using XPath selector")
     public void iVerifyThatIAmLoggedIntoMyAccountByCheckingThatTheUsernameIsDisplayedInTheNavigationBarInTheRightCornerOfTheApplicationByUsingXPathSelector() {
 
-
-
-        // ceva nu merge la expected. am un cod dubios la username + xPath
-        Assert.assertEquals("abcdefgh Collingkjhkjhk",homePageOrangeHRM.getText());
+        Assert.assertEquals("Paul Collings",homePageOrangeHRM.getText());
 
     }
 }

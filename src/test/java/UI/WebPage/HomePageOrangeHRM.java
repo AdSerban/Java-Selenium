@@ -8,9 +8,10 @@ import org.openqa.selenium.support.FindBy;
 public class HomePageOrangeHRM extends BasePage {
 
     public final By USER_DISPLAYED = By.xpath("p[@class='oxd-userdropdown-name']");
+    public final By USER_DIS = By.cssSelector("[class='oxd-userdropdown-name']");
 
     public String getText() {
-        return findElementByCssSelector(USER_DISPLAYED).getText();
+        return findElementByCssSelector(USER_DIS).getText();
     }
 
 }
