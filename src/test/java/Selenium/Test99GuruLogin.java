@@ -26,7 +26,6 @@ public class Test99GuruLogin extends BaseTest {
         guru99Login.goToGuruPage();
 
         String expectedTitle = "guru99 bank";
-
         Assert.assertEquals(guru99Login.getLoginTitle(),expectedTitle);
 
         guru99Login.loginToGuru99("mgr123", "mgr!23");
