@@ -18,7 +18,6 @@ public class ValidLogInOrangeHRMSteps extends BasePage {
         this.orangeHRM = new OrangeHRM();
         this.homePageOrangeHRM = new HomePageOrangeHRM();
     }
-
     @Given("I access OrangeHRM page")
     public void iAccessHttpsOpenSourceDemoOrangeHRMComPage() {
 

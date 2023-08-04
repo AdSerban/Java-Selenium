@@ -12,6 +12,7 @@ public class InvalidLogInOrangeHRMSteps extends BasePage {
     OrangeHRM orangeHRM;
 
     public InvalidLogInOrangeHRMSteps() {
+
         this.orangeHRM = new OrangeHRM();
     }
     @When("I enter invalid login credentials")
@@ -25,6 +26,7 @@ public class InvalidLogInOrangeHRMSteps extends BasePage {
     public void iPressTheLoginButtonToLogIntoMyAccount() {
 
         orangeHRM.clickLogin();
+
     }
 
     @Then("I verify that an appropriate message is displayed for invalid credentials")

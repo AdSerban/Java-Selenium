@@ -20,7 +20,6 @@ public class DummyTest extends BaseTest {
         calculatorPage.goToCalculatorPage();
         calculatorPage.calculateSimpleTest();
 
-        //polimorfism
 
     }
 }

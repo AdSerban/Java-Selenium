@@ -282,6 +282,10 @@ public class BasePage{
         return driver.findElement(By.cssSelector(element));
     }
 
+    public void selectFromDropDrown(WebElement dropdown, String option) {
+        Select select = new Select(dropdown);
+        select.selectByVisibleText(option);
+    }
     public void waitForPageLoadComplete() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         wait.until(driver1 -> String.valueOf(((JavascriptExecutor) driver1).
