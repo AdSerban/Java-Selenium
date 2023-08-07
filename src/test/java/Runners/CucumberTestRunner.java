@@ -9,9 +9,8 @@ import io.cucumber.junit.Cucumber;
         plugin = {"pretty"},
         glue = {"StepDeff"},
         //features = {"src/test/java/Features/ValidLogInOrangeHRM.feature"})
-        features = {"src/test/java/Features/RejectedStatusOrangeHRM.feature"})
-        //features = {"src/test/java/Features/UpdateStreetCountry.feature"})
+        //features = {"src/test/java/Features/RejectedStatusOrangeHRM.feature"})
+        features = {"src/test/java/Features/UpdateStreetCountry.feature"})
 
 
-public class CucumberTestRunner {
-}
+public class CucumberTestRunner {}

@@ -14,26 +14,28 @@ public class LeaveOrangeHRM extends BasePage {
 
 
     public final By SHOW_LEAVE = By.xpath("//div[@class='oxd-select-text oxd-select-text--active']/div[1]");
-    public final By REJECTED_MES = By.xpath("//div[@class='oxd-multiselect-chips-area']/span[1]");
+    public final By REJECTED_MES = By.xpath("//div[@class='oxd-multiselect-chips-area']/span[2]");
 
     //@FindBy(xpath = "//div[@class='oxd-select-text oxd-select-text--active']/div[1]") public WebElement showLeave;
     //@FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[3]/div/div[2]/div/div[2]") public WebElement rejectedMessage;
 
     @FindBy(css = "[class='oxd-select-option']") public WebElement listaCss;
-
-//    public final By DROPDOWN = By.className("oxd-select-dropdown");
-//    WebElement rejectedOption = driver.findElement(DROPDOWN).findElement(By.xpath(".//span[text()='Rejected']"));
+    @FindBy(css = "[class='oxd-select-text oxd-select-text--active']") public WebElement dropDown;
+    //public final By DROPDOWN = By.className("oxd-select-dropdown");
+    @FindBy(xpath = ".//span[text()='Rejected']") public WebElement rejectedOption;
+    //WebElement rejectedOption = driver.findElement(DROPDOWN).findElement(By.xpath(".//span[text()='Rejected']"));
 
 
     public void checkAndClick() {
-        waitForPageLoadComplete();
-        findElementByCssSelector(SHOW_LEAVE).click();
-//        rejectedOption.click();
-//        waitUntilItIsVisible(listaCss);
-//        selectFromDropDrown(listaCss,"Rejected");
+
+
+        click("[class='oxd-select-text oxd-select-text--active']");
+
+         driver.findElement(By.xpath(".//span[text()='Rejected']")).click();
     }
     public void assertThat() {
-        Assert.assertEquals(REJECTED_MES, "Rejected");
+
+        Assert.assertTrue(findElementByCssSelector("[class='oxd-chip oxd-chip--default oxd-multiselect-chips-selected']:nth-child(2)").isDisplayed());
     }
 
 }
