@@ -18,8 +18,7 @@ public class UpdateStreetCountrySteps extends BasePage {
     @And("I click the My Info option from the menu")
     public void iClickTheMyInfoOptionFromTheMenu() {
 
-        homePageOrangeHRM.clickLeavePage();
-        //homePageOrangeHRM.clickMyInfo();
+        homePageOrangeHRM.clickMyInfo();
     }
 
     @And("I click on the Contact Details link which will redirect me to the contactDetails page")
@@ -41,13 +40,15 @@ public class UpdateStreetCountrySteps extends BasePage {
     }
 
     @And("I press the Save button")
-    public void iPressTheSaveButton() {
+    public void iPressTheSaveButton() throws InterruptedException {
 
         myInfoOrangeHRM.saveChanges();
     }
 
     @Then("I should see the successfully updated confirmation message")
     public void iShouldSeeTheSuccessfullyUpdatedConfirmationMessage() {
+
+        myInfoOrangeHRM.assertSaveChanges();
 
     }
 }
