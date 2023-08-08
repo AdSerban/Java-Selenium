@@ -14,6 +14,7 @@ public class HomePageOrangeHRM extends BasePage {
 //    public final By LEAVE_CSS = By.cssSelector("[class='oxd-main-menu'] li:nth-child(3)");
     public final By MY_INFO_BTN = By.xpath("//ul[@class='oxd-main-menu']/li[6]");
     public final By LEAVE_BTN = By.cssSelector("div.oxd-sidepanel-body > ul > li:nth-child(3)");
+    public final By ADMIN_PAGE_BTN = By.cssSelector("li:nth-child(1) [class='oxd-main-menu-item']");
 
     public String getText() {
 
@@ -21,12 +22,15 @@ public class HomePageOrangeHRM extends BasePage {
     }
 
     public void clickLeavePage() {
-
+        waitForPageLoadComplete();
         findElementByCssSelector(LEAVE_BTN).click();
     }
     public void clickMyInfo() {
-
         waitForPageLoadComplete();
         findElementByCssSelector(MY_INFO_BTN).click();
+    }
+    public void clickAdmin() {
+        waitForPageLoadComplete();
+        findElementByCssSelector(ADMIN_PAGE_BTN).click();
     }
 }

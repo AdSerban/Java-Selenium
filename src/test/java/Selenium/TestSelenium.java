@@ -268,5 +268,10 @@ public class TestSelenium {
 
 
     }
+    @Test
+    public void testPageGetTitle() {
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/admin/languageCustomization/7");
+        System.out.println(driver.getTitle());
+    }
 
 }

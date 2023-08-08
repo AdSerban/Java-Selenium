@@ -28,14 +28,14 @@ public class LeaveOrangeHRM extends BasePage {
 
     public void checkAndClick() {
 
-
         click("[class='oxd-select-text oxd-select-text--active']");
-
-         driver.findElement(By.xpath(".//span[text()='Rejected']")).click();
+        driver.findElement(By.xpath(".//span[text()='Rejected']")).click();
     }
     public void assertThat() {
+//*[@class="oxd-multiselect-chips-area"]/span[2]
+        //Assert.assertTrue(findElementByCssSelector("[class='oxd-chip oxd-chip--default oxd-multiselect-chips-selected']:nth-child(2)").isDisplayed());
+        Assert.assertTrue(findElementByXpath("//*[@class=\"oxd-multiselect-chips-area\"]/span[2]").isDisplayed());
 
-        Assert.assertTrue(findElementByCssSelector("[class='oxd-chip oxd-chip--default oxd-multiselect-chips-selected']:nth-child(2)").isDisplayed());
     }
 
 }

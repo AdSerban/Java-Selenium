@@ -59,7 +59,7 @@ public class AddAttachmentsOrangeHRMSteps extends BasePage {
 
     @And("I select to upload a file")
     public void iSelectToUploadAFile() throws InterruptedException {
-        //myInfoOrangeHRM.addFile();
+        myInfoOrangeHRM.addFile();
     }
 
     @And("I add a comment for this document uploaded in the comment field")
