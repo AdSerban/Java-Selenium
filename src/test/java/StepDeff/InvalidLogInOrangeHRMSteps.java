@@ -10,6 +10,8 @@ import org.junit.Assert;
 public class InvalidLogInOrangeHRMSteps extends BasePage {
 
     OrangeHRM orangeHRM;
+    String username = " ";
+    String password = " ";
 
     public InvalidLogInOrangeHRMSteps() {
 
@@ -18,8 +20,9 @@ public class InvalidLogInOrangeHRMSteps extends BasePage {
     @When("I enter invalid login credentials")
     public void iEnterInvalidLoginCredentials() {
         orangeHRM.goToOrangePage();
-        orangeHRM.setUsername("invalid");
-        orangeHRM.setPassword("invalid");
+        orangeHRM.putUserAndPass(username,password);
+//        orangeHRM.setUsername("invalid");
+//        orangeHRM.setPassword("invalid");
     }
 
     @And("I press the Login button to log into my account")
