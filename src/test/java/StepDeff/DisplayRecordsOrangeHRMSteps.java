@@ -1,8 +1,9 @@
 package StepDeff;
 
-import UI.WebPage.HomePageOrangeHRM;
-import UI.WebPage.LeaveOrangeHRM;
-import UI.WebPage.OrangeHRM;
+
+import UI.WebPage.OrangeHRM.HomePageOrangeHRM;
+import UI.WebPage.OrangeHRM.LeaveOrangeHRM;
+import UI.WebPage.OrangeHRM.OrangeHRM;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

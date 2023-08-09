@@ -1,9 +1,9 @@
 package StepDeff;
 
 import UI.BasePage;
-import UI.WebPage.AdminUserManagementOrangeHRM;
-import UI.WebPage.HomePageOrangeHRM;
-import UI.WebPage.OrangeHRM;
+import UI.WebPage.OrangeHRM.AdminUserManagementOrangeHRM;
+import UI.WebPage.OrangeHRM.HomePageOrangeHRM;
+import UI.WebPage.OrangeHRM.OrangeHRM;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -53,7 +53,7 @@ public class LanguagePackagesOrangeHRMSteps extends BasePage {
     }
 
     @And("I click on the Translate button for Spanish - Español language package")
-    public void iClickOnTheTranslateButtonForSpanishEspañolLanguagePackage() {
+    public void iClickOnTheTranslateButtonForSpanishEspañolLanguagePackage() throws InterruptedException {
         adminUserManagementOrangeHRM.clickOnTranslate();
     }
 

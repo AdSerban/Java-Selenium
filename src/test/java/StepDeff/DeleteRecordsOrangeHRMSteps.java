@@ -1,10 +1,10 @@
 package StepDeff;
 
 import UI.BasePage;
-import UI.WebPage.HomePageOrangeHRM;
-import UI.WebPage.LeaveOrangeHRM;
-import UI.WebPage.MyInfoOrangeHRM;
-import UI.WebPage.OrangeHRM;
+import UI.WebPage.OrangeHRM.HomePageOrangeHRM;
+import UI.WebPage.OrangeHRM.LeaveOrangeHRM;
+import UI.WebPage.OrangeHRM.MyInfoOrangeHRM;
+import UI.WebPage.OrangeHRM.OrangeHRM;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -49,13 +49,13 @@ public class DeleteRecordsOrangeHRMSteps extends BasePage {
     }
 
     @And("I select the Contact Details link which will redirect me to the contactDetails page")
-    public void iSelectTheContactDetailsLinkWhichWillRedirectMeToTheContactDetailsPage() {
+    public void iSelectTheContactDetailsLinkWhichWillRedirectMeToTheContactDetailsPage() throws InterruptedException {
         myInfoOrangeHRM.clickMyDetails();
 
     }
 
     @And("I tick the checkbox to select one record saved in the Records Found section")
-    public void iTickTheCheckboxToSelectOneRecordSavedInTheRecordsFoundSection() {
+    public void iTickTheCheckboxToSelectOneRecordSavedInTheRecordsFoundSection() throws InterruptedException {
         myInfoOrangeHRM.selectElement();
     }
 
@@ -70,10 +70,8 @@ public class DeleteRecordsOrangeHRMSteps extends BasePage {
     }
 
     @Then("I should receive a confirmation message that the record has been deleted successfully")
-    public void iShouldReceiveAConfirmationMessageThatTheRecordHasBeenDeletedSuccessfully() {
+    public void iShouldReceiveAConfirmationMessageThatTheRecordHasBeenDeletedSuccessfully() throws InterruptedException {
         myInfoOrangeHRM.assertDeletion();
-
-        // CODE
     }
 
 }
