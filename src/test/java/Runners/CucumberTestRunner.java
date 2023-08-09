@@ -12,10 +12,13 @@ import io.cucumber.junit.Cucumber;
         //features = {"src/test/java/Features/RejectedStatusOrangeHRM.feature"})
         //features = {"src/test/java/Features/UpdateStreetCountry.feature"})
         //features = {"src/test/java/Features/AddAttachmentsOrangeHRM.feature"})
-        features = {"src/test/java/Features/DeleteRecordsOrangeHRM.feature"})
+        //features = {"src/test/java/Features/DeleteRecordsOrangeHRM.feature"})
         //features = {"src/test/java/Features/LanguagePackagesOrangeHRM.feature"})
         //features = {"src/test/java/Features/DisplayRecordsOrangeHRM.feature"})
+        //features = {"src/test/java/Features/AddNewLanguageOrangeHRM.feature"})
+        features = {"src/test/java/Features/ChangePasswordOrangeHRM.feature"})
 
 
 
-public class CucumberTestRunner {}
+
+        public class CucumberTestRunner {}

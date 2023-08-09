@@ -19,6 +19,7 @@ public class Test99GuruLogin extends BaseTest {
         this.guru99Login = new Guru99Login();
         this.guru99HomePage = new Guru99HomePage();
     }
+//o metoda de init pentru a initializa mereu paginile daca sunt mai multe teste intr o clasa
 
     @Test()
     public void test_Home_Page_Appear_Correct() throws InterruptedException {
@@ -33,8 +34,17 @@ public class Test99GuruLogin extends BaseTest {
 
         Thread.sleep(1000);
         String actualTitle = "manger id : mgr123";
-        //Assert.assertEquals(guru99HomePage.getHomePageDashboardUserName(),actualTitle);
+        Assert.assertEquals(guru99HomePage.getHomePageDashboardUserName(),actualTitle);
 
     }
 
+    @Test()
+    public void test_2() {
+
+
+        guru99Login.goToGuruPage();
+
+        String expectedTitle = "guru99 bank";
+        Assert.assertEquals(guru99Login.getLoginTitle(),expectedTitle);
+    }
 }

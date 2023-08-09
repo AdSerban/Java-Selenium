@@ -213,6 +213,7 @@ public class BasePage{
     public void click(By element) {
 //        fluentyWaitForElementToBeVisible(element);
 //        softWaitUntilItsVisible(element);
+        hardWait(3);
         waitUntilItIsClickable(element);
         getElement(element).click();
     }
@@ -292,4 +293,21 @@ public class BasePage{
                 executeScript("return document.readyState")).equals("complete"));
     }
 
+    public void scrollToElement(WebElement webElement) {
+        je = (JavascriptExecutor) driver;
+        je.executeScript("arguments[0].scrollIntoView(true);",webElement);
+    }
+
+    public void scrollElement(String cssSelector) {
+        je = (JavascriptExecutor) driver;
+        je.executeScript("elem = document.querySelector(" + cssSelector +"); elem.scrollTop = elem.scrollIntoView()");
+    }
+    public void hardWait(double seconds) {
+        try {
+            Thread.sleep((int) (seconds * 1000));
+
+        } catch (Exception e) {
+
+        }
+    }
 }
