@@ -30,7 +30,7 @@ public class ValidLogInOrangeHRMSteps extends BasePage {
         orangeHRM.putUserAndPass("Admin","admin123");
     }
 
-    @Then("I verify that I am logged into my account by checking that the username is displayed in the navigation bar in the right corner of the application by using XPath selector")
+    @Then("I verify that I am logged into my account by checking that the username is displayed in the navigation bar in the right corner of the application")
     public void iVerifyThatIAmLoggedIntoMyAccountByCheckingThatTheUsernameIsDisplayedInTheNavigationBarInTheRightCornerOfTheApplicationByUsingXPathSelector() {
 
         Assert.assertEquals("Paul Collings",homePageOrangeHRM.getText());
