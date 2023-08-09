@@ -1,4 +1,4 @@
-package UI.WebPage;
+package UI.WebPage.OrangeHRM;
 
 import UI.BasePage;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package UI.WebPage;
+package UI.WebPage.OrangeHRM;
 
 import UI.BasePage;
 import org.openqa.selenium.By;
@@ -22,9 +22,6 @@ public class MyInfoOrangeHRM extends BasePage {
     //public final By UPLOAD_FILE = By.cssSelector("[class='oxd-icon bi-upload oxd-file-input-icon']");
     public final By TEXT_AREA = By.cssSelector("[placeholder='Type comment here']");
     public final By FIRST_ELEMENT_LIST = By.cssSelector("[class='oxd-checkbox-wrapper']");
-
-    //@FindBy(css = "[class='oxd-checkbox-wrapper']") public List<WebElement> listElements;
-    List<WebElement> listElements = driver.findElements(By.cssSelector("[class='oxd-icon bi-check oxd-checkbox-input-icon']"));
     public final By DELETE_BTN = By.cssSelector("[class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-horizontal-margin']");
     public final By CONFIRM_DELETE = By.cssSelector("[class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin']");
 
@@ -33,6 +30,7 @@ public class MyInfoOrangeHRM extends BasePage {
 
         waitForPageLoadComplete();
         findElementByCssSelector(CONTACT_DETAILS).click();
+
         Actions actions = new Actions(driver);
         actions.scrollByAmount(0,900).perform();
     }
@@ -62,12 +60,8 @@ public class MyInfoOrangeHRM extends BasePage {
         findElementByCssSelector(ADD_ATTACHMENTS_BTN).click();
     }
 
-    public void addFile() throws InterruptedException {
-
-        driver.findElement(By.cssSelector("[class='oxd-file-input']")).sendKeys("/Users/adserban/Desktop/cevaTest.pdf");
-//        findElementByCssSelector(UPLOAD_FILE).click();
-//        Thread.sleep(1000);
-//        uploadFile(UPLOAD_FILE,"/Users/adserban/Desktop/cevaTest.pdf");
+    public void addFile() {
+        findElementByCssSelector(NEW_CATE_CE_SA_TRIMIT_FISIERUL).sendKeys("/Users/adserban/Desktop/cevaTest.pdf");
     }
 
 //    public void uploadFile(By cssSelector, String path) {
@@ -87,22 +81,18 @@ public class MyInfoOrangeHRM extends BasePage {
         Assert.assertTrue(findElementByCssSelector("[class='oxd-table-row oxd-table-row--with-border']").isDisplayed());
     }
 
-    public void selectElement() {
+    public void selectElement() throws InterruptedException {
 
-        findElementByCssSelector("[type='button']").click();
-//        for(int i=0; i<listElements.size(); i++) {
-//            if(i==0) {
-//                WebElement checkBoxToSelect = listElements.get(i);
-//
-//                    checkBoxToSelect.click();
-//            }
-//
-//        }
-//        waitForPageLoadComplete();
-//        waitUntilItIsClickable(FIRST_ELEMENT_LIST);
+        Thread.sleep(1000);
 
-//        findElementByCssSelector(FIRST_ELEMENT_LIST).click();
-//        findElementByCssSelector(FIRST_ELEMENT_LIST).isSelected();
+        List<WebElement> listElements = driver.findElements(By.cssSelector("div.oxd-table-card-cell-checkbox"));
+        for(int i=0; i<listElements.size(); i++) {
+            WebElement checkBoxToSelect = listElements.get(i);
+            if (i==1) {
+                    checkBoxToSelect.click();
+            }
+
+        }
     }
 
     public void deleteAct() {
@@ -113,8 +103,10 @@ public class MyInfoOrangeHRM extends BasePage {
         findElementByCssSelector(CONFIRM_DELETE).click();
     }
 
-    public void assertDeletion(){
-        Assert.assertTrue(findElementByCssSelector("[div[id='oxd-toaster_1']").isDisplayed());
+    public void assertDeletion() throws InterruptedException {
+        Thread.sleep(1000);
+        Assert.assertTrue(findElementByCssSelector("div[class='oxd-toast-container oxd-toast-container--bottom']").isDisplayed());
+        //oxd-toaster_1
     }
 
 }

@@ -1,10 +1,10 @@
 package StepDeff;
 
 import UI.BasePage;
-import UI.WebPage.HomePageOrangeHRM;
-import UI.WebPage.LeaveOrangeHRM;
-import UI.WebPage.MyInfoOrangeHRM;
-import UI.WebPage.OrangeHRM;
+import UI.WebPage.OrangeHRM.HomePageOrangeHRM;
+import UI.WebPage.OrangeHRM.LeaveOrangeHRM;
+import UI.WebPage.OrangeHRM.MyInfoOrangeHRM;
+import UI.WebPage.OrangeHRM.OrangeHRM;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -48,7 +48,7 @@ public class AddAttachmentsOrangeHRMSteps extends BasePage {
     }
 
     @And("I click on the Contact Details link which will redirect me to the contactDetails page - attachment")
-    public void iClickOnTheContactDetailsLinkWhichWillRedirectMeToTheContactDetailsPageAttachment() {
+    public void iClickOnTheContactDetailsLinkWhichWillRedirectMeToTheContactDetailsPageAttachment() throws InterruptedException {
         myInfoOrangeHRM.clickMyDetails();
     }
 
@@ -58,7 +58,7 @@ public class AddAttachmentsOrangeHRMSteps extends BasePage {
     }
 
     @And("I select to upload a file")
-    public void iSelectToUploadAFile() throws InterruptedException {
+    public void iSelectToUploadAFile() {
         myInfoOrangeHRM.addFile();
     }
 
