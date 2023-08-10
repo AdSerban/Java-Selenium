@@ -60,9 +60,9 @@ public class AdminUserManagementOrangeHRM extends BasePage {
 
     }
 
-    public void selectFromList() throws InterruptedException {
+    public void selectFromList() {
         click(SELECT_ARROW);
-        Thread.sleep(1000);
+        hardWait(1);
         driver.findElement(By.xpath(".//span[text()='Colognian (Germany)']")).click();
 
 //        Actions actions = new Actions(driver);

@@ -81,9 +81,9 @@ public class MyInfoOrangeHRM extends BasePage {
         Assert.assertTrue(findElementByCssSelector("[class='oxd-table-row oxd-table-row--with-border']").isDisplayed());
     }
 
-    public void selectElement() throws InterruptedException {
+    public void selectElement() {
 
-        Thread.sleep(1000);
+        hardWait(1);
 
         List<WebElement> listElements = driver.findElements(By.cssSelector("div.oxd-table-card-cell-checkbox"));
         for(int i=0; i<listElements.size(); i++) {

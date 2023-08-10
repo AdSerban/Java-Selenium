@@ -16,9 +16,9 @@ public class ChangePasswordOrangeHRM extends BasePage {
     public void currentPass() {
         hardWait(1);
 
-        List<WebElement> listElementsTranslate = driver.findElements(By.cssSelector("input.oxd-input.oxd-input--active:nth-child(1)"));
-        for (int i = 0; i < listElementsTranslate.size(); i++) {
-            WebElement checkBoxToSelect = listElementsTranslate.get(i);
+        List<WebElement> fillLabels = driver.findElements(By.cssSelector("input.oxd-input.oxd-input--active:nth-child(1)"));
+        for (int i = 0; i < fillLabels.size(); i++) {
+            WebElement checkBoxToSelect = fillLabels.get(i);
             if (i == 0) {
                 checkBoxToSelect.sendKeys("admin123");
             }
@@ -28,9 +28,9 @@ public class ChangePasswordOrangeHRM extends BasePage {
     public void newPass() {
         hardWait(1);
 
-        List<WebElement> listElementsTranslate = driver.findElements(By.cssSelector("input.oxd-input.oxd-input--active:nth-child(1)"));
-        for (int i = 0; i < listElementsTranslate.size(); i++) {
-            WebElement checkBoxToSelect = listElementsTranslate.get(i);
+        List<WebElement> fillLabels = driver.findElements(By.cssSelector("input.oxd-input.oxd-input--active:nth-child(1)"));
+        for (int i = 0; i < fillLabels.size(); i++) {
+            WebElement checkBoxToSelect = fillLabels.get(i);
             if (i == 0) {
                 checkBoxToSelect.sendKeys("admin123456");
             }
@@ -40,9 +40,9 @@ public class ChangePasswordOrangeHRM extends BasePage {
     public void confirmPass() {
         hardWait(1);
 
-        List<WebElement> listElementsTranslate = driver.findElements(By.cssSelector("input.oxd-input.oxd-input--active:nth-child(1)"));
-        for (int i = 0; i < listElementsTranslate.size(); i++) {
-            WebElement checkBoxToSelect = listElementsTranslate.get(i);
+        List<WebElement> fillLabels = driver.findElements(By.cssSelector("input.oxd-input.oxd-input--active:nth-child(1)"));
+        for (int i = 0; i < fillLabels.size(); i++) {
+            WebElement checkBoxToSelect = fillLabels.get(i);
             if (i == 1) {
                 checkBoxToSelect.sendKeys("admin123456");
             }
