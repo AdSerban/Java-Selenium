@@ -17,8 +17,9 @@ import io.cucumber.junit.Cucumber;
         //features = {"src/test/java/Features/DisplayRecordsOrangeHRM.feature"})
         //features = {"src/test/java/Features/AddNewLanguageOrangeHRM.feature"})
         //features = {"src/test/java/Features/ChangePasswordOrangeHRM.feature"})
-        features = {"src/test/java/Features/VacationLeaveRecordsOrangeHRM.feature"})
-
+        //features = {"src/test/java/Features/VacationLeaveRecordsOrangeHRM.feature"})
+        //features = {"src/test/java/Features/AddCommentsOnLeaveRequestOrangeHRM.feature"})
+        features = {"src/test/java/Features/LeaveRecordsPendingApprovalAndResetDataOrangeHRM.feature"})
 
 
         public class CucumberTestRunner {}
