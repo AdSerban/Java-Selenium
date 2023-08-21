@@ -4,6 +4,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import static org.apache.commons.lang3.SystemUtils.IS_OS_MAC;
 
@@ -23,10 +27,13 @@ public class BrowserHelper {
 
         if (driver == null){
 
-            WebDriverManager.chromedriver().setup();
 
-            driver = new ChromeDriver();
+//            FirefoxOptions options = new FirefoxOptions();
+//            options.addArguments("start-maximized");
+//            options.addArguments("--remote-allow-origins=*");
+            driver = new FirefoxDriver();
             driver.manage().window().maximize();
+            WebDriverManager.firefoxdriver().setup();
 
             return driver;
 
