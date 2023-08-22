@@ -15,6 +15,8 @@ public class AdminUserManagementOrangeHRM extends BasePage {
     public final By LANG_PACK = By.cssSelector("[class='--active oxd-topbar-body-nav-tab --parent'] li:nth-child(4)");
     public final By SELECT_ARROW = By.cssSelector("i[class='oxd-icon bi-caret-down-fill oxd-select-text--arrow']");
     public final By SAVE_NEW_LANG = By.cssSelector("button.oxd-button.oxd-button--medium.oxd-button--secondary:nth-child(3)");
+    //public final By JOB_BTN = By.cssSelector("li[class='--active oxd-topbar-body-nav-tab --parent']");
+
 
 
     public void clickOnDropDown() {
@@ -25,10 +27,10 @@ public class AdminUserManagementOrangeHRM extends BasePage {
         waitForPageLoadComplete();
         findElementByCssSelector(LANG_PACK).click();
     }
-    public void clickOnTranslate() throws InterruptedException {
+    public void clickOnTranslate() {
         waitForPageLoadComplete();
+        hardWait(1);
 
-        Thread.sleep(1000);
         List<WebElement> listElementsTranslate = driver.findElements(By.cssSelector("button.oxd-button.oxd-button"));
 //        System.out.println(listElementsTranslate + " ------------------------------------- text ");
 
@@ -44,10 +46,10 @@ public class AdminUserManagementOrangeHRM extends BasePage {
         Assert.assertEquals(driver.getTitle(),"OrangeHRM");
     }
 
-    public void clickAddNewLanguageBtn() throws InterruptedException {
+    public void clickAddNewLanguageBtn() {
         waitForPageLoadComplete();
+        hardWait(1);
 
-        Thread.sleep(1000);
         List<WebElement> listElementsTranslate = driver.findElements(By.cssSelector("button.oxd-button.oxd-button"));
 //        System.out.println(listElementsTranslate + " ------------------------------------- text ");
 
@@ -57,7 +59,6 @@ public class AdminUserManagementOrangeHRM extends BasePage {
                 elementToSelect.click();
             }
         }
-
     }
 
     public void selectFromList() {
@@ -70,16 +71,40 @@ public class AdminUserManagementOrangeHRM extends BasePage {
 //        scrollElement("(class='oxd-select-dropdown --positon-bottom')");
 //        COLOGNIA_GERMANY.click();
 //        click(COLOGNIA_GERMANY);
-
     }
 
     public void saveSelection() {
         click(SAVE_NEW_LANG);
     }
-    public void assertSave() throws InterruptedException {
-        Thread.sleep(1000);
+    public void assertSave() {
+        hardWait(1);
         Assert.assertTrue(findElementByCssSelector("div[class='oxd-toast-container oxd-toast-container--bottom']").isDisplayed());
+    }
 
+    public void clickOnJobTitles() {
+
+        hardWait(1);
+        List<WebElement> listElements = driver.findElements(By.cssSelector ("span[class='oxd-topbar-body-nav-tab-item']"));
+//        System.out.println(listElementsTranslate + " ------------------------------------- text ");
+
+        for (int i = 0; i < listElements.size(); i++) {
+            WebElement job = listElements.get(i);
+            if (i==1) {
+                job.click();
+            }
+        }
+
+        hardWait(1);
+
+        List<WebElement> listElementsJobs = driver.findElements(By.cssSelector("a.oxd-topbar-body-nav-tab-link"));
+//        System.out.println(listElementsTranslate + " ------------------------------------- text ");
+
+        for (int i = 0; i < listElementsJobs.size(); i++) {
+            WebElement jobs = listElementsJobs.get(i);
+            if (i==0) {
+                jobs.click();
+            }
+        }
     }
 
 }

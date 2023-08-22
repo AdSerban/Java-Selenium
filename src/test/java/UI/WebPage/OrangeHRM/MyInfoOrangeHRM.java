@@ -24,10 +24,14 @@ public class MyInfoOrangeHRM extends BasePage {
     public final By FIRST_ELEMENT_LIST = By.cssSelector("[class='oxd-checkbox-wrapper']");
     public final By DELETE_BTN = By.cssSelector("[class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-horizontal-margin']");
     public final By CONFIRM_DELETE = By.cssSelector("[class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin']");
-
     public final By NEW_CATE_CE_SA_TRIMIT_FISIERUL = By.cssSelector("[class='oxd-file-input']");
-    public void clickMyDetails() {
+    public final By PROFILE_PICTURE = By.cssSelector("[class='employee-image']");
+    public final By ADD_PROFILE_PICTURE = By.cssSelector("[type='file']");
+    public final By SAVE_PROFILE_PICTURE = By.cssSelector("[class='oxd-form-actions'] button");
+    public final By TOASTER_MESSAGE_PROFILE_PICTURE = By.cssSelector("[id='oxd-toaster_1']");
 
+
+    public void clickMyDetails() {
         waitForPageLoadComplete();
         findElementByCssSelector(CONTACT_DETAILS).click();
 
@@ -46,14 +50,13 @@ public class MyInfoOrangeHRM extends BasePage {
         click("[class='oxd-select-text-input']");
         //driver.findElement(By.xpath(".//span[text()='Algeria']")).click();
         driver.findElement(By.cssSelector("[class='oxd-select-option']:nth-child(4)")).click();
-
     }
+
     public void saveChanges() {
         click(SAVE_BTN);
     }
     public void assertSaveChanges() {
         Assert.assertTrue(findElementByCssSelector("[class='oxd-toast-start']").isDisplayed());
-
     }
 
     public void clickAttachmentsBtn() {
@@ -61,7 +64,9 @@ public class MyInfoOrangeHRM extends BasePage {
     }
 
     public void addFile() {
-        findElementByCssSelector(NEW_CATE_CE_SA_TRIMIT_FISIERUL).sendKeys("/Users/adserban/Desktop/cevaTest.pdf");
+        WebElement chooseFile = driver.findElement(By.cssSelector("[class='oxd-file-input']"));
+        chooseFile.sendKeys("/Users/adserban/Desktop/cevaTest.pdf");
+        //findElementByCssSelector(NEW_CATE_CE_SA_TRIMIT_FISIERUL).sendKeys("/Users/adserban/Desktop/cevaTest.pdf");
     }
 
 //    public void uploadFile(By cssSelector, String path) {
@@ -91,7 +96,6 @@ public class MyInfoOrangeHRM extends BasePage {
             if (i==1) {
                     checkBoxToSelect.click();
             }
-
         }
     }
 
@@ -109,4 +113,26 @@ public class MyInfoOrangeHRM extends BasePage {
         //oxd-toaster_1
     }
 
+    public void clickOnProfilePicture() {
+        click(PROFILE_PICTURE);
+        hardWait(1);
+    }
+
+    public void addProfilePicture() {
+        hardWait(1);
+        WebElement chooseFile = driver.findElement(By.cssSelector("[type='file']"));
+        chooseFile.sendKeys("/Users/adserban/Desktop/Screenshot.png");
+//        findElementByCssSelector(ADD_PROFILE_PICTURE).sendKeys("/Users/adserban/Desktop/Screenshot.png");
+//        hardWait(1);
+    }
+
+    public void saveProfilePicture() {
+        click(SAVE_PROFILE_PICTURE);
+        hardWait(1);
+    }
+
+    public void assertProfilePicture() {
+        Assert.assertTrue(findElementByCssSelector(TOASTER_MESSAGE_PROFILE_PICTURE).isDisplayed());
+        hardWait(1);
+    }
 }

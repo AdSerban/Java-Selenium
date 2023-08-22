@@ -44,18 +44,25 @@ public class BrowserHelper {
         }
 
     }
-//    public  WebDriver getChromeDriver(){
-//
-//        System.setProperty("webdriver.chrome.driver", "src/test/java/resources/drivers/chromedriver");
-//
+    public  WebDriver getChromeDriver(){
+
+        if (driver == null) {
+            System.setProperty("webdriver.chrome.driver", "/Users/adserban/Desktop/chromedriver-mac-x64/chromedriver");
+
 //        ChromeOptions options = new ChromeOptions();
 //        options.addArguments("--remote-allow-origins=*");
-//
-//        WebDriver chromeDriver = new ChromeDriver(options);
-//        chromeDriver.manage().window().maximize();
-//
-//        return chromeDriver;
-//
-//        // in basepage initializez driverul
-//    }
+
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            WebDriverManager.chromedriver().setup();
+
+            return driver;
+        } else
+            return driver;
+
+        // in basepage initializez driverul
+    }
+    public static void closeDriverSession(){
+        driver.quit();
+    }
 }
