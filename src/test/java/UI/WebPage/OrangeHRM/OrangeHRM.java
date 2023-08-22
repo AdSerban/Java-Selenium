@@ -29,6 +29,7 @@ public class OrangeHRM extends BasePage {
     public final By ALERT = By.cssSelector("[role='alert']");
 
     public void goToOrangePage() {
+        hardWait(1);
         goTo("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
     }

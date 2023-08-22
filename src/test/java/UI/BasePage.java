@@ -26,7 +26,7 @@ public class BasePage{
     protected WebDriver driver;
 
     public BasePage() {
-        this.driver = browserHelper.getDriver();
+        this.driver = browserHelper.getChromeDriver();
         this.originalWindow = driver.getWindowHandle();
     }
     public void goTo(String link) {
@@ -118,6 +118,10 @@ public class BasePage{
     public void fill(By element, String text) {
         findElementByCssSelector(element);
         empty(element);
+        findElementByCssSelector(element).sendKeys(text);
+    }
+    public void fillWOEmpty(By element, String text) {
+        findElementByCssSelector(element);
         findElementByCssSelector(element).sendKeys(text);
     }
 
