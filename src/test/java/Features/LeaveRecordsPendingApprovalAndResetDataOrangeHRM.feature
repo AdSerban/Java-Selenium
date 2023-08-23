@@ -14,5 +14,5 @@ Feature: As a user I want to see leave records with Pending Approval status for 
     Then I should see a pop-up message that says no records found
 
     Examples:
-    | from date  | to date    | Anthony Nolan |
-    | 2021-12-01 | 2023-12-31 | Anthony Nolan |
+    | from date  | to date    | Anthony Nolan    |
+    | 2021-12-01 | 2023-12-31 | Anthony Nolan_01 |
