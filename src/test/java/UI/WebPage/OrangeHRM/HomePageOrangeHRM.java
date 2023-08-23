@@ -10,6 +10,7 @@ import java.util.List;
 public class HomePageOrangeHRM extends BasePage {
 
     public final By USER_DISPLAYED = By.xpath("//p[@class='oxd-userdropdown-name']");
+
     public final By USER_DIS = By.cssSelector("[class='oxd-userdropdown-name']");
 
 //    public final By LEAVE = By.xpath("//ul[@class='oxd-main-menu']/li[3]");
@@ -18,7 +19,9 @@ public class HomePageOrangeHRM extends BasePage {
     public final By LEAVE_BTN = By.cssSelector("div.oxd-sidepanel-body > ul > li:nth-child(3)");
     public final By ADMIN_PAGE_BTN = By.cssSelector("li:nth-child(1) [class='oxd-main-menu-item']");
     public final By PROFILE_BTN = By.cssSelector("[class='oxd-userdropdown']");
+
     public final By CHANGE_PASS_OPS = By.cssSelector("[class='oxd-userdropdown-link']");
+    public final By RECRUITMENT_BTN = By.xpath("//ul[@class='oxd-main-menu']/li[5]");
 
 
 
@@ -54,6 +57,11 @@ public class HomePageOrangeHRM extends BasePage {
             }
         }
 //        findElementByCssSelector(CHANGE_PASS_OPS).click();
-
     }
+
+    public void clickRecruitment() {
+        waitForPageLoadComplete();
+        findElementByCssSelector(RECRUITMENT_BTN).click();
+    }
+
 }
