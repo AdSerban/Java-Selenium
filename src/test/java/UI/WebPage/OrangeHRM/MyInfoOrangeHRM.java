@@ -13,19 +13,23 @@ public class MyInfoOrangeHRM extends BasePage {
 
     public final By CONTACT_DETAILS = By.xpath("//div[@role='tablist']/div[2]");
     public final By STREET = By.cssSelector("input[class='oxd-input oxd-input--active']:nth-child(1)");
+
     public final By COUNTRY = By.cssSelector("[class='oxd-select-text-input']");
     public final By SAVE_BTN = By.cssSelector("[type='submit']");
     public final By SAVE_BTN_FILE = By.cssSelector("[class='oxd-form-actions'] [type='submit']:nth-child(3)");
-    public final By PROMPTER = By.cssSelector("[id='oxd-toaster_1'][class='oxd-toast--success']");
 
+    public final By PROMPTER = By.cssSelector("[id='oxd-toaster_1'][class='oxd-toast--success']");
     public final By ADD_ATTACHMENTS_BTN = By.cssSelector("[type='button']:nth-child(2)");
     //public final By UPLOAD_FILE = By.cssSelector("[class='oxd-icon bi-upload oxd-file-input-icon']");
     public final By TEXT_AREA = By.cssSelector("[placeholder='Type comment here']");
+
     public final By FIRST_ELEMENT_LIST = By.cssSelector("[class='oxd-checkbox-wrapper']");
     public final By DELETE_BTN = By.cssSelector("[class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-horizontal-margin']");
     public final By CONFIRM_DELETE = By.cssSelector("[class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin']");
+
     public final By NEW_CATE_CE_SA_TRIMIT_FISIERUL = By.cssSelector("[class='oxd-file-input']");
     public final By PROFILE_PICTURE = By.cssSelector("[class='employee-image']");
+
     public final By ADD_PROFILE_PICTURE = By.cssSelector("[type='file']");
     public final By SAVE_PROFILE_PICTURE = By.cssSelector("[class='oxd-form-actions'] button");
     public final By TOASTER_MESSAGE_PROFILE_PICTURE = By.cssSelector("[id='oxd-toaster_1']");
@@ -42,7 +46,7 @@ public class MyInfoOrangeHRM extends BasePage {
     public void changeAddress() {
         waitForPageLoadComplete();
         findElementByCssSelector(STREET).clear();
-        findElementByCssSelector(STREET).sendKeys("adresa schimbata");
+        findElementByCssSelector(STREET).sendKeys("schimbata");
 
     }
     public void changeCountry() {

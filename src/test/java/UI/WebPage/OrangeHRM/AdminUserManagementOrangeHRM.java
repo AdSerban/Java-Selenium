@@ -35,9 +35,9 @@ public class AdminUserManagementOrangeHRM extends BasePage {
 //        System.out.println(listElementsTranslate + " ------------------------------------- text ");
 
         for (int i = 0; i < listElementsTranslate.size(); i++) {
-            WebElement checkBoxToSelect = listElementsTranslate.get(i);
+            WebElement elementToSelect = listElementsTranslate.get(i);
             if (i==21) {
-                checkBoxToSelect.click();
+                elementToSelect.click();
             }
         }
     }
@@ -54,9 +54,9 @@ public class AdminUserManagementOrangeHRM extends BasePage {
 //        System.out.println(listElementsTranslate + " ------------------------------------- text ");
 
         for (int i = 0; i < listElementsTranslate.size(); i++) {
-            WebElement checkBoxToSelect = listElementsTranslate.get(i);
+            WebElement elementToSelect = listElementsTranslate.get(i);
             if (i==0) {
-                checkBoxToSelect.click();
+                elementToSelect.click();
             }
         }
     }

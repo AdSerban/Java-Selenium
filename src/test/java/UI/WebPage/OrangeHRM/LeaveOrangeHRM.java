@@ -42,6 +42,7 @@ public class LeaveOrangeHRM extends BasePage {
 
     public void checkAndClick() {
 
+        waitForPageLoadComplete();
         click("[class='oxd-select-text oxd-select-text--active']");
         driver.findElement(By.xpath(".//span[text()='Rejected']")).click();
     }

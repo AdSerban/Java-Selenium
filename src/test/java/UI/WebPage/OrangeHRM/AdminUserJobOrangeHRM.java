@@ -23,7 +23,7 @@ public class AdminUserJobOrangeHRM extends BasePage {
     }
     public void addTitleName() {
         hardWait(1);
-        fill(JOB_TITLE_NAME,"Manager2");
+        fill(JOB_TITLE_NAME,"Manager_New");
     }
     public void fillDescription() {
         hardWait(1);
