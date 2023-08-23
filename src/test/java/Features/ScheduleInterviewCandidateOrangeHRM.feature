@@ -1,4 +1,5 @@
 Feature: As a user I am able to schedule an interview with a candidate
+
   Scenario: As a user I am able to schedule an interview with a candidate
 
     Given I access OrangeHRM page - interview
