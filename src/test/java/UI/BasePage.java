@@ -312,6 +312,7 @@ public class BasePage{
 
         } catch (Exception e) {
 
+            // sa identific ultimul element de pe pagina si dupa sa inceapa executia
         }
     }
 }

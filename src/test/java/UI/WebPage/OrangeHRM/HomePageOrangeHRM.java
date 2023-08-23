@@ -49,7 +49,7 @@ public class HomePageOrangeHRM extends BasePage {
 
         for (int i = 0; i < listElementsFromProfileDropDown.size(); i++) {
             WebElement checkBoxToSelect = listElementsFromProfileDropDown.get(i);
-            if (i == 2) {
+            if (i == 2) { // dupa textul vizibil
                 checkBoxToSelect.click();
             }
         }
