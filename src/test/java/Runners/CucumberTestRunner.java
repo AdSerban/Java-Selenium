@@ -19,12 +19,14 @@ import io.cucumber.junit.Cucumber;
         //features = {"src/test/java/Features/ChangePasswordOrangeHRM.feature"})
         //features = {"src/test/java/Features/VacationLeaveRecordsOrangeHRM.feature"})
         //features = {"src/test/java/Features/AddCommentsOnLeaveRequestOrangeHRM.feature"})
-        features = {"src/test/java/Features/LeaveRecordsPendingApprovalAndResetDataOrangeHRM.feature"})
+        //features = {"src/test/java/Features/LeaveRecordsPendingApprovalAndResetDataOrangeHRM.feature"})
         //features = {"src/test/java/Features/AddANewJobOrangeHRM.feature"})
         //features = {"src/test/java/Features/ChangeProfilePictureOrangeHRM.feature"})
+        //features = {"src/test/java/Features/AutomationTesterVacanciesOrangeHRM.feature"})
+        features = {"src/test/java/Features/ScheduleInterviewCandidateOrangeHRM.feature"})
+        //features = {"src/test/java/Features/AccessAnEmployeesRecordsOrangeHRM.feature"})
+        //features = {"src/test/java/Features/AddANewEmployeeOrangeHRM.feature"})
 
-        features = {"src/test/java/Features/AutomationTesterVacanciesOrangeHRM.feature"})
-        //features = {"src/test/java/Features/ScheduleInterviewCandidateOrangeHRM.feature"})
 
 
 
