@@ -19,11 +19,22 @@ public class RecruitmentOrangeHRM extends BasePage {
         public final By PM_OPTION = By.cssSelector("[name='pm']");
         public final By SAVE_BTN = By.cssSelector("[type='submit']");
         public final By ADD_ANOTHER_BTN = By.cssSelector("[class='oxd-icon bi-plus oxd-button-icon']");
-        public final By ALERT = By.cssSelector("p.oxd-text--toast-message");
+        public final By ALERT = By.cssSelector("div[class='oxd-toast oxd-toast--success oxd-toast-container--toast']");
 
 
 
-        public void clickVacancies() {
+    //div[class='oxd-toast oxd-toast--success oxd-toast-container--toast']
+    // oxd-toast-container oxd-toast-container--bottom
+    // oxd-toast oxd-toast--success oxd-toast-container--toast
+    // ("p.oxd-text--toast-message")
+    // ("[id='oxd-toaster_1']")
+    // aria-live="assertive"
+    // ("[class='oxd-toast-start']")
+    // ("[class='oxd-toast oxd-toast--success oxd-toast-container--toast']")
+
+
+
+    public void clickVacancies() {
             waitForPageLoadComplete();
             findElementByCssSelector(VACANCIES_BTN).click();
         }
@@ -127,7 +138,7 @@ public class RecruitmentOrangeHRM extends BasePage {
                     options.click();
                     options.sendKeys("o");
                     hardWait(2);
-                    WebElement firstInterviewer = driver.findElement(dropdownAutoComplete).findElement(By.xpath("//span[text()='Pepe  Frog King']"));
+                    WebElement firstInterviewer = driver.findElement(dropdownAutoComplete).findElement(By.xpath("//span[text()='Odis  Adalwin']"));
                     firstInterviewer.click();
                 }
             }
@@ -148,7 +159,7 @@ public class RecruitmentOrangeHRM extends BasePage {
                     options.click();
                     options.sendKeys("a");
                     hardWait(2);
-                    WebElement secondInterviewer = driver.findElement(dropdownAutoComplete).findElement(By.xpath("//span[text()='Thom Thi Ba']"));
+                    WebElement secondInterviewer = driver.findElement(dropdownAutoComplete).findElement(By.xpath("//span[text()='Linda Jane Anderson']"));
                     secondInterviewer.click();
                 }
             }
@@ -183,7 +194,9 @@ public class RecruitmentOrangeHRM extends BasePage {
         }
         public void getAlertConfirmSave() {
             hardWait(1);
-            findElementByCssSelector(ALERT).isDisplayed();
+            Assert.assertTrue(findElementByCssSelector("div[class='oxd-toast oxd-toast--success oxd-toast-container--toast']").isDisplayed());
+            //Assert.assertTrue(findElementByCssSelector(ALERT).isDisplayed());
+
         }
 
 }

@@ -75,6 +75,6 @@ public class ScheduleInterviewCandidateOrangeHRMSteps {
 
     @Then("I should see the confirmation message for this scheduled interview")
     public void iShouldSeeTheConfirmationMessageForThisScheduledInterview() {
-        //recruitmentOrangeHRM.getAlertConfirmSave();
+        recruitmentOrangeHRM.getAlertConfirmSave();
     }
 }
