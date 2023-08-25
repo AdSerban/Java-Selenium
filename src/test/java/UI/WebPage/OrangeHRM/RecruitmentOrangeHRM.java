@@ -19,20 +19,7 @@ public class RecruitmentOrangeHRM extends BasePage {
         public final By PM_OPTION = By.cssSelector("[name='pm']");
         public final By SAVE_BTN = By.cssSelector("[type='submit']");
         public final By ADD_ANOTHER_BTN = By.cssSelector("[class='oxd-icon bi-plus oxd-button-icon']");
-        public final By ALERT = By.cssSelector("div[class='oxd-toast oxd-toast--success oxd-toast-container--toast']");
-
-
-
-    //div[class='oxd-toast oxd-toast--success oxd-toast-container--toast']
-    // oxd-toast-container oxd-toast-container--bottom
-    // oxd-toast oxd-toast--success oxd-toast-container--toast
-    // ("p.oxd-text--toast-message")
-    // ("[id='oxd-toaster_1']")
-    // aria-live="assertive"
-    // ("[class='oxd-toast-start']")
-    // ("[class='oxd-toast oxd-toast--success oxd-toast-container--toast']")
-
-
+        public final By ALERT = By.cssSelector("div[class='oxd-toast-icon-wrap oxd-toast-icon-wrap--success']");
 
     public void clickVacancies() {
             waitForPageLoadComplete();
@@ -136,7 +123,7 @@ public class RecruitmentOrangeHRM extends BasePage {
                 WebElement options = listElementsLabel.get(i);
                 if (i == 0) {
                     options.click();
-                    options.sendKeys("o");
+                    options.sendKeys("a");
                     hardWait(2);
                     WebElement firstInterviewer = driver.findElement(dropdownAutoComplete).findElement(By.xpath("//span[text()='Odis  Adalwin']"));
                     firstInterviewer.click();
@@ -190,13 +177,10 @@ public class RecruitmentOrangeHRM extends BasePage {
         public void clickSave() {
             waitForPageLoadComplete();
             click(SAVE_BTN);
-            hardWait(20);
+
         }
         public void getAlertConfirmSave() {
-            hardWait(1);
-            Assert.assertTrue(findElementByCssSelector("div[class='oxd-toast oxd-toast--success oxd-toast-container--toast']").isDisplayed());
-            //Assert.assertTrue(findElementByCssSelector(ALERT).isDisplayed());
-
+            Assert.assertTrue(findElementByCssSelector(ALERT).isDisplayed());
         }
 
 }
