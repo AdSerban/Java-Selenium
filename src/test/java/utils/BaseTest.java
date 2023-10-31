@@ -1,8 +1,13 @@
 package utils;
 
+//import com.relevantcodes.extentreports.ExtentReports;
+//import com.relevantcodes.extentreports.ExtentTest;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import static org.openqa.selenium.support.PageFactory.initElements;
 
@@ -10,17 +15,27 @@ import static org.openqa.selenium.support.PageFactory.initElements;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
 
+//    static ExtentTest test;
+//    static ExtentReports report;
 
     @BeforeAll
     public void startDriver()
     {
+//        LocalDateTime myDateObj = LocalDateTime.now();
+//        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+//        String formattedDate = myDateObj.format(myFormatObj);
+//        System.out.println("After formatting: " + formattedDate);
+//
+//        report = new ExtentReports(System.getProperty("user.dir")+"ExtentReportResults.html");
+//        test = report.startTest("ExtentDemo");
 
     }
 
     @AfterAll
     public void quitDriver()
     {
-
+//        report.endTest(test);
+//        report.flush();
     }
 
 
