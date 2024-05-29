@@ -23,17 +23,16 @@ public class BrowserHelper {
         });
 
     }
+
     public WebDriver getDriver(){
+
 
         if (driver == null){
 
-
-//            FirefoxOptions options = new FirefoxOptions();
-//            options.addArguments("start-maximized");
-//            options.addArguments("--remote-allow-origins=*");
-            driver = new FirefoxDriver();
+            System.out.println("init driver");
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
             driver.manage().window().maximize();
-            WebDriverManager.firefoxdriver().setup();
 
             return driver;
 
@@ -42,8 +41,8 @@ public class BrowserHelper {
             return driver;
 
         }
-
     }
+
     public  WebDriver getChromeDriver(){
 
         if (driver == null) {

@@ -26,7 +26,7 @@ public class BasePage{
     protected WebDriver driver;
 
     public BasePage() {
-        this.driver = browserHelper.getChromeDriver();
+        this.driver = browserHelper.getDriver();
         this.originalWindow = driver.getWindowHandle();
     }
     public void goTo(String link) {
@@ -293,7 +293,7 @@ public class BasePage{
     }
     public void waitForPageLoadComplete() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
-        wait.until(driver1 -> String.valueOf(((JavascriptExecutor) driver1).
+        wait.until(driver -> String.valueOf(((JavascriptExecutor) driver).
                 executeScript("return document.readyState")).equals("complete"));
     }
 
