@@ -16,7 +16,10 @@ public class DummyTest extends BaseTest {
 
     public DummyTest() {
 
-        init();
+//        startDriver();
+//        init();
+//        quitDriver();
+
     }
     public void init() {
         this.calculatorPage = new CalculatorPage();

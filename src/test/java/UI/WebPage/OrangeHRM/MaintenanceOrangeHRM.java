@@ -23,7 +23,7 @@ public class MaintenanceOrangeHRM extends BasePage {
         hardWait(2);
         findElementByCssSelector(EMPLOYEE_NAME).sendKeys("a");
         hardWait(2);
-        WebElement firstOption = driver.findElement(dropdownAutoComplete).findElement(By.xpath("//span[text()='aMohamed aAbdallah aRagab']"));
+        WebElement firstOption = driver.findElement(dropdownAutoComplete).findElement(By.xpath("//span[text()='Odis  Adalwin']"));
         firstOption.click();
     }
 

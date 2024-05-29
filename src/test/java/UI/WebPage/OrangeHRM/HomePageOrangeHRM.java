@@ -22,7 +22,7 @@ public class HomePageOrangeHRM extends BasePage {
 
     public final By CHANGE_PASS_OPS = By.cssSelector("[class='oxd-userdropdown-link']");
     public final By RECRUITMENT_BTN = By.xpath("//ul[@class='oxd-main-menu']/li[5]");
-    public final By MAINTENANCE_BTN = By.xpath("//ul[@class='oxd-main-menu']/li[10]");
+    public final By MAINTENANCE_BTN = By.xpath("//ul[@class='oxd-main-menu']/li[9]");
     public final By PIM_BTN = By.xpath("//ul[@class='oxd-main-menu']/li[2]");
     public final By CHECK_PASS  = By.cssSelector("[type='password']");
     public final By CONFIRM_BTN = By.cssSelector("[type='submit']");
