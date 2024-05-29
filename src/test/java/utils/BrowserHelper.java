@@ -46,7 +46,7 @@ public class BrowserHelper {
     public  WebDriver getChromeDriver(){
 
         if (driver == null) {
-            System.setProperty("webdriver.chrome.driver", "/Users/adserban/Desktop/chromedriver-mac-x64/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "D://chromedriver-win64//chromedriver-win64//chromedriver.exe");
 
 //        ChromeOptions options = new ChromeOptions();
 //        options.addArguments("--remote-allow-origins=*");

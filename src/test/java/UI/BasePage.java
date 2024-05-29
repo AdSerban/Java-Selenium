@@ -26,7 +26,7 @@ public class BasePage{
     protected WebDriver driver;
 
     public BasePage() {
-        this.driver = browserHelper.getDriver();
+        this.driver = browserHelper.getChromeDriver();
         this.originalWindow = driver.getWindowHandle();
     }
     public void goTo(String link) {
