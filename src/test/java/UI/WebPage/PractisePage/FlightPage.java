@@ -142,6 +142,6 @@ public class FlightPage extends BasePage {
     }
 
     public void clickSearchButton() {
-            click(SUBMIT_BTN);
-        }
+        click(SUBMIT_BTN);
+    }
 }
