@@ -26,7 +26,9 @@ import io.cucumber.junit.Cucumber;
         //features = {"src/test/java/Features/ScheduleInterviewCandidateOrangeHRM.feature"})
         //features = {"src/test/java/Features/AccessAnEmployeesRecordsOrangeHRM.feature"})
         //features = {"src/test/java/Features/AddANewEmployeeOrangeHRM.feature"})
-        features = {"src/test/java/Features/ScheduleFlightPractise.feature"})
+        //features = {"src/test/java/Features/ScheduleFlightPractise.feature"})
+        features = {"src/test/java/Features/SelectRadioBtnNice.feature"})
+
 
 
 
