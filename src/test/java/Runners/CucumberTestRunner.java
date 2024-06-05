@@ -23,11 +23,11 @@ import io.cucumber.junit.Cucumber;
         //features = {"src/test/java/Features/ui/AddANewJobOrangeHRM.feature"})
         //features = {"src/test/java/Features/ui/ChangeProfilePictureOrangeHRM.feature"})
         //features = {"src/test/java/Features/ui/AutomationTesterVacanciesOrangeHRM.feature"})
-        features = {"src/test/java/Features/ui/ScheduleInterviewCandidateOrangeHRM.feature"})
+        //features = {"src/test/java/Features/ui/ScheduleInterviewCandidateOrangeHRM.feature"})
         //features = {"src/test/java/Features/ui/AccessAnEmployeesRecordsOrangeHRM.feature"})
         //features = {"src/test/java/Features/ui/AddANewEmployeeOrangeHRM.feature"})
         //features = {"src/test/java/Features/ui/ScheduleFlightPractise.feature"})
-        //features = {"src/test/java/Features/ui/SelectRadioBtnNice.feature"})
+        features = {"src/test/java/Features/ui/SelectRadioBtnNice.feature"})
 
 
 
